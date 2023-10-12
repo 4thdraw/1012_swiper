@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 </head>
-<body>
+<body class="show">
     <div id="banner">
       <div class="swiper">       
         <div class="swiper-wrapper"> 
@@ -66,26 +66,44 @@
                 
         </div>
        
-          <div class="swiper-pagination container"></div>
+        <div class="swiper-pagination container"></div>
        
         
        
       </div>
     </div>
+
+    <div id="pop" class="position-absolute m-auto bg-white"></div>
+
+
     <script>
       const menu = ['기침천식','편강의 마법','세번째 버튼'];
-      const swiper = new Swiper('#banner .swiper', {
-     
-        loop: true,      
+      const swiper = new Swiper('#banner .swiper', {     
+        loop: true, 
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },     
         pagination: {
           el: '#banner .swiper-pagination',
 			    clickable: true,
           renderBullet: function (index, className) {
             return '<span class="' + className + '">' + menu[index] + '</span>';
           },
-        }
-       
+        },
+        on: {
+          init: function () {
+            console.log('시작하자마자');
+          },
+          slideChange : function(){
+            console.log('슬라이드가 되고 나서');
+          }
+       },
       });
+
+      document.getElementById("pop").addEventListener('click', ()=>{
+        document.body.classList.remove("show");
+      })
     </script>
     
 
