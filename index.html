@@ -66,16 +66,23 @@
                 
         </div>
        
-        <div class="swiper-pagination"></div>
+          <div class="swiper-pagination container"></div>
+       
+        
        
       </div>
     </div>
     <script>
+      const menu = ['기침천식','편강의 마법','세번째 버튼'];
       const swiper = new Swiper('#banner .swiper', {
      
         loop: true,      
         pagination: {
           el: '#banner .swiper-pagination',
+			    clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + menu[index] + '</span>';
+          },
         }
        
       });

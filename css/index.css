@@ -6,3 +6,30 @@ body{
     letter-spacing: -0.0085em;
     color:#222;
 }
+#banner .swiper{
+    max-height: calc(100vh - 100px);
+}
+#banner .swiper-slide{
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 50.78vw;
+}
+#banner .swiper-slide .container{
+    height: 100%;
+}
+.ceo{
+  background-image: url(https://www.wwdoctor.com/static/asset/images/main/banner_bg_01.jpg);
+}
+.gma{
+    background-image: url(https://www.wwdoctor.com/static/asset/images/main/banner_bg_02.jpg);
+}
+.mike{
+    background-image: url(https://www.wwdoctor.com/static/asset/images/main/banner_bg_03.jpg);
+}
+#banner .swiper-pagination{
+  margin: 0 auto;
+  right:0;
+  text-align: left;
+  bottom:11%;
+}
